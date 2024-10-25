@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lista de links úteis com cards e ícones">
+  <title>Lista de Links</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1c1f2b; /* Fundo azul escuro */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 100vh;
+      color: #f4f4f9; /* Texto claro para contraste */
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Botão de troca de tema */
+    .theme-toggle-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #f4f4f9; /* Cor clara no tema escuro */
+      transition: color 0.3s;
+    }
+
+    .theme-toggle-btn:hover {
+      color: #ffeb3b; /* Amarelo ao passar o mouse */
+    }
+
+    .header {
+      background-color: #273043; /* Azul mais claro */
+      padding: 20px;
+      width: 100%;
+      text-align: center;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .header-text {
+      font-size: 1.25rem;
+      color: #f4f4f9;
+    }
+
+    .copy-btn {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .copy-btn:hover {
+      background-color: #2980b9;
+    }
+
+    .container {
+      max-width: 100%; /* Ocupar 100% da largura disponível */
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Cria o máximo de colunas com largura mínima de 250px */
+      gap: 20px; /* Espaçamento entre os cards */
+      justify-items: center;
+    }
+
+    .card {
+      background-color: #273043; /* Azul intermediário */
+      border: 1px solid #3b4b65; /* Borda em tom mais escuro */
+      border-radius: 10px;
+      margin: 15px;
+      width: 280px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, background-color 0.3s;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background-color: #2c3e50; /* Fundo mais escuro ao passar o mouse */
+    }
+
+    .icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: #3498db; /* Ícone azul claro */
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+      color: #f4f4f9; /* Texto claro */
+    }
+
+    .card p {
+      margin-bottom: 15px;
+      font-size: 1rem;
+      color: #c0c7d1; /* Texto levemente mais claro */
+    }
+
+    /* Estilos do tema claro */
+    .light-theme {
+      background-color: #f4f4f9; /* Fundo claro */
+      color: #333; /* Texto escuro */
+    }
+
+    .light-theme .theme-toggle-btn {
+      color: #333; /* Cor do ícone no tema claro */
+    }
+
+    .light-theme .header {
+      background-color: #fff;
+    }
+
+    .light-theme .card {
+      background-color: #fff;
+      border-color: #ddd;
+    }
+
+    .light-theme .card:hover {
+      background-color: #f0f0f0; /* Fundo claro ao passar o mouse */
+    }
+
+    .light-theme .copy-btn {
+      background-color: #3498db;
+    }
+
+    .light-theme .icon {
+      color: #3498db;
+    }
+
+    /* Cor do texto para o tema claro */
+    .light-theme .header-text,
+    .light-theme .card h3,
+    .light-theme .card p {
+      color: #333; /* Texto preto */
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .card {
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Botão de troca de tema -->
+  <button class="theme-toggle-btn" id="theme-toggle-btn" onclick="toggleTheme()">
+    🌙 <!-- Lua (ícone padrão) -->
+  </button>
+
+  <!-- Texto e botão para copiar -->
+  <div class="header">
+    <div class="header-text">
+      Nosso pix: 37.685.034/0001-77 
+      CNPJ- PORTAL GOIANIRA
+    </div>
+    <button class="copy-btn" onclick="copyText()">Copiar Texto</button>
+  </div>
+
+  <!-- Container de cards -->
+  <div class="container">
+    <!-- Card 1 (Novo card) -->
+    <a href="https://chatgpt.com/" class="card" target="_blank">
+      <div class="icon">🤖</div>
+      <h3>ChatGPT</h3>
+      <p>Converse com uma inteligência artificial e explore o ChatGPT.</p>
+    </a>
+    <!-- Card (Novo card) -->
+    <a href="https://leonardo.ai/" class="card" target="_blank">
+      <div class="icon">🧠</div>
+      <h3>Leonardo AI</h3>
+      <p>Explore o Leonardo AI para criar arte com inteligência artificial.</p>
+    </a>
+    <!-- Card do Canva -->
+    <a href="https://www.canva.com/pt_br/" class="card" target="_blank">
+      <div class="icon">🎨</div>
+      <h3>Canva</h3>
+      <p>Crie designs incríveis para redes sociais, apresentações e muito mais com o Canva.</p>
+    </a>
+
+    <!-- Adicione estes novos cards ao seu container -->
+
+    <!-- Card 21 -->
+    <a href="https://cnccustomer.gmfinancial.com/Newcon.Autoatendimento.Web/boleto-rapido" class="card" target="_blank" rel="noopener noreferrer">
+      <div class="icon">🚙</div>
+      <h3>Boleto Rápido - GM Financial</h3>
+      <p>Eliene Pedra - Emita seu boleto rápido pelo portal GM Financial.</p>
+    </a>
+
+    <!-- Card 22 -->
+    <a href="https://minha.bv.com.br/login/" class="card" target="_blank" rel="noopener noreferrer">
+      <div class="icon">🏦</div>
+      <h3>Minha BV Financeira</h3>
+      <p>Acesse sua conta na BV Financeira e gerencie seus contratos.</p>
+    </a>
+
+    <!-- Card 1 -->
+    <a href="https://www.go.gov.br/servicos/servico/consultar-veiculo--ipva-multas-e-crlv" class="card" target="_blank">
+      <div class="icon">🚗</div>
+      <h3>Consultar Veículo - IPVA, Multas e CRLV</h3>
+      <p>Consulta de informações sobre veículos, IPVA, multas e CRLV.</p>
+    </a>
+    
+    <!-- Card 2 -->
+    <a href="https://www.go.gov.br/tela-orgao/servico/solicitar-renovacao-de-processo-para-medicamentos-de-alto-custo--cemac-jb" class="card" target="_blank">
+      <div class="icon">💊</div>
+      <h3>Renovação de Medicamentos Alto Custo</h3>
+      <p>Solicite renovação de processo para medicamentos de alto custo.</p>
+    </a>
+
+    <!-- Adicione mais cards conforme necessário -->
+    
+    <!-- Card 3 -->
+    <a href="https://www.uniaraguaia.edu.br/graduacao-ead/" class="card" target="_blank">
+      <div class="icon">🎓</div>
+      <h3>Graduação EAD - Uniaraguaia</h3>
+      <p>Conheça os cursos de graduação a distância oferecidos pela Uniaraguaia.</p>
+    </a>
+
+    <!-- Card 4 -->
+    <a href="https://parceiros.ouromoderno.com.br/login" class="card" target="_blank">
+      <div class="icon">🔒</div>
+      <h3>Parceiros Ouro Moderno</h3>
+      <p>Plataforma de parceiros Ouro Moderno, acesse sua conta.</p>
+    </a>
+
+    <!-- Card 5 -->
+    <a href="https://agencia-virtual.saneago.com.br/segundaViaSimplificada" class="card" target="_blank">
+      <div class="icon">💧</div>
+      <h3>Segunda Via Simplificada - Saneago</h3>
+      <p>Solicite a segunda via da sua conta de água na Saneago.</p>
+    </a>
+
+    <!-- Card 6 -->
+    <a href="https://vivoemdia.vivo.com.br/#/" class="card" target="_blank">
+      <div class="icon">📱</div>
+      <h3>Vivo Em Dia</h3>
+      <p>Acesse sua conta Vivo e controle sua fatura.</p>
+    </a>
+
+    <!-- Card 7 -->
+    <a href="https://fatura-facil.claro.com.br/" class="card" target="_blank">
+      <div class="icon">📞</div>
+      <h3>Fatura Fácil - Claro</h3>
+      <p>Consultas e pagamentos de faturas Claro.</p>
+    </a>
+
+    <!-- Card 8 -->
+    <a href="https://meutim.tim.com.br/novo/login" class="card" target="_blank">
+      <div class="icon">📱</div>
+      <h3>Meu TIM</h3>
+      <p>Acesse sua conta TIM e gerencie sua fatura.</p>
+    </a>
+
+    <!-- Card 9 -->
+    <a href="https://www.oi.com.br/minha-oi/codigo-de-barras/" class="card" target="_blank">
+      <div class="icon">📶</div>
+      <h3>Código de Barras - Minha Oi</h3>
+      <p>Emita o código de barras para pagamento da sua fatura Oi.</p>
+    </a>
+
+    <!-- Card 10 -->
+    <a href="https://www.tse.jus.br/eleitor/certidao" class="card" target="_blank">
+      <div class="icon">🗳️</div>
+      <h3>Certidões Eleitorais - TSE</h3>
+      <p>Emita suas certidões eleitorais online.</p>
+    </a>
+    <!-- Card 11 -->
+    <a href="https://goianira.bsit-br.com.br/portal/employee-login.jsf" class="card" target="_blank" rel="noopener noreferrer">
+      <div class="icon">👨‍💼</div>
+      <h3>Portal do Funcionário - Goianira</h3>
+      <p>Acesse o portal do funcionário de Goianira para consulta de informações.</p>
+    </a>
+
+    <!-- Card 12 -->
+    <a href="https://folhapagamento.sistemas.go.gov.br/folhapagamento/control?cmd=ConsContraCheque" class="card" target="_blank" rel="noopener noreferrer">
+      <div class="icon">💼</div>
+      <h3>Consulta Contracheque - Goiás</h3>
+      <p>Consulte seu contracheque no portal do governo de Goiás.</p>
+    </a>
+
+    <!-- Card 13 -->
+    <a href="https://goias.equatorialenergia.com.br/LoginGO.aspx?envia-dados=Entrar" class="card" target="_blank" rel="noopener noreferrer">
+      <div class="icon">⚡</div>
+      <h3>Login - Equatorial Energia</h3>
+      <p>Acesse sua conta de energia elétrica e gerencie seus serviços.</p>
+    </a>
+
+    <!-- Card 14 -->
+    <a href="https://pf.santandernet.com.br/LOGBBR_NS_ENS/ChannelDriver.ssobto?dse_contextRoot=true#" class="card" target="_blank" rel="noopener noreferrer">
+      <div class="icon">🏦</div>
+      <h3>Internet Banking - Santander</h3>
+      <p>Acesse sua conta Santander e gerencie suas finanças.</p>
+    </a>
+
+    <!-- Card 15 -->
+    <a href="https://projudi.tjgo.jus.br/CertidaoNegativaPositivaPublica?PaginaAtual=1&TipoArea=1&InteressePessoal=&Territorio=&Finalidade=" class="card" target="_blank" rel="noopener noreferrer">
+      <div class="icon">📜</div>
+      <h3>Certidão Negativa - Área Cível</h3>
+      <p>Emita sua certidão negativa para processos da área cível no Projudi.</p>
+    </a>
+
+    <!-- Card 16 -->
+    <a href="https://projudi.tjgo.jus.br/CertidaoNegativaPositivaPublica?PaginaAtual=1&TipoArea=2&InteressePessoal=S" class="card" target="_blank" rel="noopener noreferrer">
+      <div class="icon">⚖️</div>
+      <h3>Certidão Negativa - Área Criminal</h3>
+      <p>Solicite certidão negativa para processos da área criminal no Projudi.</p>
+    </a>
+
+    <!-- Card 17 -->
+    <a href="https://sistemas.trf1.jus.br/certidao/#/solicitacao" class="card" target="_blank" rel="noopener noreferrer">
+      <div class="icon">📝</div>
+      <h3>Certidão - TRF1</h3>
+      <p>Solicite certidões no portal do Tribunal Regional Federal da 1ª Região.</p>
+    </a>
+
+    <!-- Card 18 -->
+    <a href="https://raivirtual.ssp.go.gov.br/#/" class="card" target="_blank" rel="noopener noreferrer">
+      <div class="icon">📄</div>
+      <h3>RAI Virtual - SSP Goiás</h3>
+      <p>Acesse o sistema RAI Virtual da Secretaria de Segurança Pública de Goiás.</p>
+    </a>
+    <!-- Card 19 -->
+    <a href="https://qualityinfo.typingclub.com" class="card" target="_blank">
+      <div class="icon">⌨️</div>
+      <h3>Typing Club - Quality Info</h3>
+      <p>Aprenda e melhore suas habilidades de digitação com o Typing Club.</p>
+    </a>
+
+    <!-- Card 20 -->
+    <a href="https://www.qualityinfocursos.com.br/" class="card" target="_blank">
+      <div class="icon">🎓</div>
+      <h3>Quality Info Cursos</h3>
+      <p>Explore cursos variados para ampliar seus conhecimentos com a Quality Info.</p>
+    </a>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const themeToggleBtn = document.getElementById('theme-toggle-btn');
+      body.classList.toggle('light-theme');
+
+      // Altera o ícone do botão
+      if (body.classList.contains('light-theme')) {
+        themeToggleBtn.textContent = '🌞'; // Sol
+      } else {
+        themeToggleBtn.textContent = '🌙'; // Lua
+      }
+    }
+
+    function copyText() {
+      const textToCopy = "Nosso pix: 37.685.034/0001-77 CNPJ- PORTAL GOIANIRA";
+      navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+          alert('Texto copiado para a área de transferência!');
+        })
+        .catch(err => {
+          console.error('Erro ao copiar o texto: ', err);
+        });
+    }
+  </script>
+</body>
+</html>
