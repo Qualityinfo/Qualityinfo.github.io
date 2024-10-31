@@ -152,6 +152,31 @@
     .light-theme .card p {
       color: #333; /* Texto preto */
     }
+    nav {
+      background-color: #273043;
+      width: 100%;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #f4f4f9;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffeb3b;
+    }
+
 
     /* Responsividade */
     @media (max-width: 768px) {
@@ -164,11 +189,19 @@
 </head>
 <body>
 
-  <!-- Botão de troca de tema -->
+
+  <nav>
+      <!-- Botão de troca de tema -->
   <button class="theme-toggle-btn" id="theme-toggle-btn" onclick="toggleTheme()">
     🌙 <!-- Lua (ícone padrão) -->
   </button>
-
+    <ul>
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="gerador_curriculo.html">Curriculo</a></li>
+      <li><a href="#contrato">Contrato</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+    </ul>
+  </nav>
   <!-- Texto e botão para copiar -->
   <div class="header">
     <div class="header-text">
